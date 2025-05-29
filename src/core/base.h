@@ -48,9 +48,11 @@ typedef intptr_t  sptr_value;
 #define Debug_Break() (*(volatile int*)0 = 1)
 #endif
 
+#define Stringify(x) #x
+
 // #undef Assert
 #if BUILD_DEBUG
-#define Assert(x) do { if(!(x)) { Debug_Break(); } } while(0)
+#define Assert(x) do { if(!(x)) { printf(Stringify(x)); Debug_Break(); } } while(0)
 #else
 #define Assert(x) ((void)(x))
 #endif

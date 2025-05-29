@@ -1,4 +1,2 @@
-x := 1;
-y := 2;
-z := x + y * 3;
-print(z);
+print 1 + 2 * 3;
+print 4 - 8 / 3;
